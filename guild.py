@@ -2,8 +2,8 @@ import json
 import time
 import requests
 
-# API endpoint (do not change)
-API_BASE = "https://danger-guild-management-web.vercel.app/join"
+# API endpoint
+API_BASE = "http://flash-guild-management.vercel.app/request_clan"
 
 # File containing the accounts list
 ACCOUNTS_FILE = "accounts.json"
@@ -44,7 +44,7 @@ def join_guild(guild_id, uid, password, session=None):
     Send a GET request to the join endpoint.
     Returns (success: bool, message: str).
     """
-    url = f"{API_BASE}?guild_id={guild_id}&uid={uid}&password={password}"
+    url = f"{API_BASE}?clan_id={guild_id}&uid={uid}&password={password}"
 
     try:
         requester = session if session else requests
@@ -70,7 +70,7 @@ def join_guild(guild_id, uid, password, session=None):
 
 def main():
     print("=" * 55)
-    print("   Guild Join Bot — Danger Guild Management")
+    print("   Guild Join Bot — Flash Guild Management")
     print("=" * 55)
 
     # ---------- Ask for Guild ID ----------
